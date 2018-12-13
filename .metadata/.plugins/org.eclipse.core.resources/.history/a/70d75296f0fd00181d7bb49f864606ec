@@ -1,0 +1,27 @@
+package daySix;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.*;
+
+public class TestEdurekaProtal {
+	
+	ChromeDriver driver;
+	
+	@BeforeTest
+	public void beforeTest() {
+		System.setProperty("webdriver.chrome.driver", 
+		"D:\\Documents\\Software University\\QA\\Resources\\Webdriver\\chromedriver_win32\\chromedriver.exe");
+		driver = new ChromeDriver();
+	}
+	
+	@Test
+	public void accessSite() {
+		
+	}
+	
+	@Test
+	public void login() {
+		
+	}
+	
+}

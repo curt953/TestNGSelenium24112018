@@ -1,0 +1,13 @@
+<suite name="TestNG">
+
+	<test name="Testing with TestNG">
+
+		<classes>
+			
+			<class name="testNG.TestEdurekaPortal"/>
+		
+		</classes>
+	
+	</test>
+
+</suite>

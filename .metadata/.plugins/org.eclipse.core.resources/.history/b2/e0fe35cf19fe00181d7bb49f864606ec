@@ -1,0 +1,40 @@
+package daySix;
+
+//import org.openqa.selenium.chrome.ChromeDriver;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.*;
+
+public class TestEdurekaProtal {
+	
+	WebDriver driver;
+	
+	@BeforeSuite
+	public void launchBrowser() {
+//		System.setProperty("webdriver.chrome.driver", 
+//		"D:\\Documents\\Software University\\QA\\Resources\\Webdriver\\chromedriver\\chromedriver.exe");
+//		driver = new ChromeDriver();
+		System.setProperty("webdriver.gecko.driver", 
+		"D:\\Documents\\Software University\\QA\\Resources\\Webdriver\\geckodriver\\geckodriver.exe");
+		driver = new FirefoxDriver();
+		
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
+		driver.get("https://www.edureka.co");
+	}
+	
+	@Test(groups={"Login with owned account"})
+	public void accessSite() {
+		
+	}
+	
+	@Test(groups={"Login with owned account"})
+	public void login() {
+		
+	}
+	
+}

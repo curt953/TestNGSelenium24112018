@@ -1,0 +1,20 @@
+<suite name="TestNG">
+
+	<test name="Testing with TestNG">
+		
+		<groups>
+			<run>
+				<include name="Login with owned account"/>
+				<include name="Exception handling"/>
+			</run>
+		</groups>
+		
+		<classes>
+			
+			<class name="testNG.TestEdurekaPortal"/>
+		
+		</classes>
+	
+	</test>
+
+</suite>
