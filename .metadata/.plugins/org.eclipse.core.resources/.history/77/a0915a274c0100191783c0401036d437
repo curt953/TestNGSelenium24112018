@@ -1,0 +1,20 @@
+package daySeven;
+
+import org.testng.annotations.Test;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeSuite;
+
+public class TestFlipkartWebsite {
+ 
+  WebDriver driver;
+	
+  @BeforeSuite
+  public void beforeSuite() {
+	  
+  }
+  
+  @Test
+  public void f() {
+  }
+
+}

@@ -1,0 +1,20 @@
+<suite name="Edureka Project">
+
+	<test name="Basic functions testing">
+		
+		<groups>
+			<run>
+				<include name="Login with owned account"/>
+				<include name="Exception handling"/>
+			</run>
+		</groups>
+		
+		<classes>
+			
+			<class name="testNG.TestEdurekaPortal"/>
+		
+		</classes>
+	
+	</test>
+
+</suite>
