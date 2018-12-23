@@ -1,0 +1,24 @@
+package dayEight;
+
+import org.testng.annotations.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.BeforeSuite;
+
+public class VerifyGmail {
+  
+  WebDriver driver;
+	
+  @BeforeSuite
+  public void beforeSuite() {
+	  System.setProperty("webdriver.gecko.driver", 
+	  "D:\\Documents\\Software University\\QA\\Resources\\Webdriver\\geckodriver\\geckodriver.exe");
+	  driver = new FirefoxDriver();
+  }	
+	
+	@Test
+  public void f() {
+  }
+  
+
+}

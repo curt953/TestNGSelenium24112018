@@ -1,0 +1,74 @@
+package dayEight;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeSuite;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterSuite;
+
+public class GmailWithNoPageFactory {
+  WebDriver driver;
+  String emailInputId = "identifierId";
+  String emailNextButtonId = "identifierNext";
+  String passwordInputXpath = "//div[@class='Xb9hP']/input[@class='whsOnd zHQkBf']";
+  String passwordNextButtonXpath = "//div[@id='passwordNext']/content[@class='CwaK9']/span[@class='RveJvd snByac']";
+  String writeNewEmailButtonXpath = "/html/body/div[7]/div[3]/div/div[2]/div[1]/div[1]/div[1]/div[2]/div/div/div/div[1]/div/div";
+  String emailToSendInputId = ":9i";
+  String emailSubjectInputId = ":90";
+  String emailContentInputId = ":a5";
+  String emailSendButtonId = ":8q";
+  String emailAccountButtonXpath = "/html/body/div[7]/div[3]/div/div[1]/div[4]/header/div[2]/div[3]/div/div[2]/div/a";
+  String emailAccountSignOutButtonId = "gb_71";
+  
+  @BeforeSuite
+  public void beforeSuite() {
+	  System.setProperty("webdriver.gecko.driver", 
+	  "D:\\Documents\\Software University\\QA\\Resources\\Webdriver\\geckodriver\\geckodriver.exe");
+	  driver = new FirefoxDriver();
+	    
+	  driver.manage().window().maximize();
+	  driver.manage().deleteAllCookies();
+	  driver.get("https://www.gmail.com");
+	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+  }
+	
+  @Test(priority=0)
+  public void loginToGmail() {
+	  driver.findElement(By.id(emailInputId)).sendKeys("svilen.nikolov953@gmail.com");
+	  driver.findElement(By.id(emailNextButtonId)).click();
+	  
+	  for(String winHandle : driver.getWindowHandles()) {
+		  driver.switchTo().window(winHandle);
+	  }
+	  
+	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	  driver.findElement(By.xpath(passwordInputXpath)).sendKeys("Zapomnime1!");
+	  driver.findElement(By.xpath(passwordNextButtonXpath)).click();
+	  
+	  for(String winHandle : driver.getWindowHandles()) {
+		  driver.switchTo().window(winHandle);
+	  }
+  }
+  
+  @Test(priority=1)
+  public void sendEmail() {
+	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	  driver.findElement(By.xpath(writeNewEmailButtonXpath)).click();
+	  driver.findElement(By.id(emailToSendInputId)).sendKeys("svilen.nikolov1@abv.bg");
+	  driver.findElement(By.id(emailSubjectInputId)).sendKeys("Test");
+	  driver.findElement(By.id(emailContentInputId)).sendKeys("Test");
+	  driver.findElement(By.id(emailSendButtonId)).click();
+  }
+  
+  @Test(priority=2)
+  public void logoutFromGmail() {
+	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	  driver.findElement(By.xpath(emailAccountButtonXpath)).click();
+	  driver.findElement(By.id(emailAccountSignOutButtonId)).click();
+  }
+ 
+}

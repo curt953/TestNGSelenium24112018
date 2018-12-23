@@ -1,0 +1,34 @@
+package dayEight;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeSuite;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterSuite;
+
+public class GmailWithNoPageFactory {
+  WebDriver driver;
+	
+  @BeforeSuite
+  public void beforeSuite() {
+	  System.setProperty("webdriver.gecko.driver", 
+	  "D:\\Documents\\Software University\\QA\\Resources\\Webdriver\\geckodriver\\geckodriver.exe");
+	  driver = new FirefoxDriver();
+	    
+	  driver.manage().window().maximize();
+	  driver.manage().deleteAllCookies();
+	  driver.get("https://www.gmail.com");
+  }
+	
+  @Test
+  public void f() {
+  
+  }
+  
+
+  @AfterSuite
+  public void afterSuite() {
+	  
+  }
+
+}

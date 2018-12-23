@@ -1,0 +1,9 @@
+package dayEight;
+
+import org.testng.annotations.Test;
+
+public class POMDemoWithPageFactory {
+  @Test
+  public void f() {
+  }
+}

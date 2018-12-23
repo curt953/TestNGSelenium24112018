@@ -3,13 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="daySix.TestEdurekaProtal">
+      <class name="dayEight.GmailWithNoPageFactory">
         <methods>
-          <include name="launchBrowser"/>
-          <include name="registerWithExistingAccount"/>
-          <include name="logout"/>
+          <include name="sendEmail"/>
+          <include name="loginToGmail"/>
+          <include name="beforeSuite"/>
+          <include name="logoutFromGmail"/>
         </methods>
-      </class> <!-- daySix.TestEdurekaProtal -->
+      </class> <!-- dayEight.GmailWithNoPageFactory -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

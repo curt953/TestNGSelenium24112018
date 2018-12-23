@@ -1,0 +1,28 @@
+package dayEight;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.*;
+import org.testng.annotations.*;
+
+public class POMDemoWithPageFactory {
+  
+  WebDriver driver;
+	
+  public POMDemoWithPageFactory(WebDriver ldriver) {
+	  this.driver = ldriver;
+  }
+  
+  @FindBy(id="email")
+  @CacheLookup
+  WebElement userEmail;
+  
+  @FindBy(id="")
+  @CacheLookup
+  WebElement userPass;
+  
+  
+  @Test
+  public void f() {
+  }
+}
